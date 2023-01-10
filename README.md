@@ -2,9 +2,9 @@
 
 An Example to show Videos in folder Assets\Resources\Videos360.
 
-Each video should have:
-* A video file in the form Video-n.mp4 (`n` is a number starting with 1)
-* A thumbnail foto file in the form Thumbnail-n.mp4
+This is a screenshot example. As you can see the project creates a navigation system:
+
+![Screenshot](/screenshots/screenshot-1.png)
 
 ## Getting Started
 
@@ -31,6 +31,8 @@ Take into account that you should have some Videos to show in folder Assets\Reso
 Each video should have:
 * A video file in the form Video-n.mp4 (`n` is a number starting with 1)
 * A thumbnail foto file in the form Thumbnail-n.mp4
+
+You have to edit title and description for every video in Assets/Scripts/PanelManager.cs/InitializePanels() as well.
 
 Enjoy!!!
 
