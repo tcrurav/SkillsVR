@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
+using System.IO;
 
 public class PanelController : MonoBehaviour
 {
@@ -30,8 +31,8 @@ public class PanelController : MonoBehaviour
 
     //public Camera m_MainCamera;
 
-    InputDevice leftHand;
-    InputDevice rightHand;
+    //InputDevice leftHand;
+    //InputDevice rightHand;
 
     private void Start()
     {
@@ -113,8 +114,16 @@ public class PanelController : MonoBehaviour
 
     public void UpdateCurrentVideo()
     {
-        backgroundVideoPlayer.GetComponent<UnityEngine.Video.VideoPlayer>().clip =
-            Resources.Load<UnityEngine.Video.VideoClip>("Videos360/" + panels.panels[currentVideoNumber].video);
+        //backgroundVideoPlayer.GetComponent<UnityEngine.Video.VideoPlayer>().clip =
+        //    Resources.Load<UnityEngine.Video.VideoClip>("Videos360/" + panels.panels[currentVideoNumber].video);
+
+        string fileName = panels.panels[currentVideoNumber].video + ".mp4";
+        Debug.Log(fileName);
+        string persistentDataPath = Application.persistentDataPath;
+        Debug.Log(persistentDataPath);
+        string path = Path.Combine(Path.Combine(persistentDataPath, "Videos360"), fileName);
+        Debug.Log(path);
+        backgroundVideoPlayer.GetComponent<UnityEngine.Video.VideoPlayer>().url = path;
     }
 
     public void HidePanelCanvas()
